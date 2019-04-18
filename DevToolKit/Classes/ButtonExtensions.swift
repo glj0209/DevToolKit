@@ -38,20 +38,20 @@ extension UIButton {
         
         switch style {
         case .Top:
-            imageEdgeInsets = UIEdgeInsetsMake(-labelHeight - space/2.0, 0.0, 0.0, -labelWidth)
-            labelEdgeInsets = UIEdgeInsetsMake(0.0, -imageWith - 20, -imageHeight - space/2.0 - 20, 0.0)
+            imageEdgeInsets = UIEdgeInsets(top: -labelHeight - space/2.0, left: 0.0, bottom: 0.0, right: -labelWidth)
+            labelEdgeInsets = UIEdgeInsets(top: 0.0, left: -imageWith - 20, bottom: -imageHeight - space/2.0 - 20, right: 0.0)
             break
         case .Left:
-            imageEdgeInsets = UIEdgeInsetsMake(0.0, -space/2.0, 0.0, space/2.0)
-            labelEdgeInsets = UIEdgeInsetsMake(0.0, space/2.0, 0.0, -space/2.0)
+            imageEdgeInsets = UIEdgeInsets(top: 0.0, left: -space/2.0, bottom: 0.0, right: space/2.0)
+            labelEdgeInsets = UIEdgeInsets(top: 0.0, left: space/2.0, bottom: 0.0, right: -space/2.0)
             break
         case .Bottom:
-            imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -labelHeight-space/2.0, -labelWidth)
-            labelEdgeInsets = UIEdgeInsetsMake(-imageHeight-space/2.0, -imageWith, 0.0, 0.0)
+            imageEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: -labelHeight-space/2.0, right: -labelWidth)
+            labelEdgeInsets = UIEdgeInsets(top: -imageHeight-space/2.0, left: -imageWith, bottom: 0.0, right: 0.0)
             break
         case .Right:
-            imageEdgeInsets = UIEdgeInsetsMake(0.0, labelWidth+space/2.0, 0.0, -labelWidth-space/2.0)
-            labelEdgeInsets = UIEdgeInsetsMake(0.0, -imageWith-space/2.0, 0.0, imageWith+space/2.0)
+            imageEdgeInsets = UIEdgeInsets(top: 0.0, left: labelWidth+space/2.0, bottom: 0.0, right: -labelWidth-space/2.0)
+            labelEdgeInsets = UIEdgeInsets(top: 0.0, left: -imageWith-space/2.0, bottom: 0.0, right: imageWith+space/2.0)
             break
         }
         
@@ -88,20 +88,20 @@ extension UIButton {
         
         switch style {
         case .Top:
-            imageEdgeInsets = UIEdgeInsetsMake(-labelHeight - space/2.0, 0.0, 0.0, -labelWidth)
-            labelEdgeInsets = UIEdgeInsetsMake(0.0, -arg, -imageHeight - space/2.0 - 20, 0.0)
+            imageEdgeInsets = UIEdgeInsets(top: -labelHeight - space/2.0, left: 0.0, bottom: 0.0, right: -labelWidth)
+            labelEdgeInsets = UIEdgeInsets(top: 0.0, left: -arg, bottom: -imageHeight - space/2.0 - 20, right: 0.0)
             break
         case .Left:
-            imageEdgeInsets = UIEdgeInsetsMake(0.0, -space/2.0, 0.0, space/2.0)
-            labelEdgeInsets = UIEdgeInsetsMake(0.0, space/2.0, 0.0, -space/2.0)
+            imageEdgeInsets = UIEdgeInsets(top: 0.0, left: -space/2.0, bottom: 0.0, right: space/2.0)
+            labelEdgeInsets = UIEdgeInsets(top: 0.0, left: space/2.0, bottom: 0.0, right: -space/2.0)
             break
         case .Bottom:
-            imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -labelHeight-space/2.0, -labelWidth)
-            labelEdgeInsets = UIEdgeInsetsMake(-imageHeight-space/2.0, -imageWith, 0.0, 0.0)
+            imageEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: -labelHeight-space/2.0, right: -labelWidth)
+            labelEdgeInsets = UIEdgeInsets(top: -imageHeight-space/2.0, left: -imageWith, bottom: 0.0, right: 0.0)
             break
         case .Right:
-            imageEdgeInsets = UIEdgeInsetsMake(0.0, labelWidth+space/2.0, 0.0, -labelWidth-space/2.0)
-            labelEdgeInsets = UIEdgeInsetsMake(0.0, -imageWith-space/2.0, 0.0, imageWith+space/2.0)
+            imageEdgeInsets = UIEdgeInsets(top: 0.0, left: labelWidth+space/2.0, bottom: 0.0, right: -labelWidth-space/2.0)
+            labelEdgeInsets = UIEdgeInsets(top: 0.0, left: -imageWith-space/2.0, bottom: 0.0, right: imageWith+space/2.0)
             break
         }
         
