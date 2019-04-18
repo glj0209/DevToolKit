@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DevToolKit_Example' do
+  pod 'DevToolKit', :path => '../'
+
+  target 'DevToolKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
