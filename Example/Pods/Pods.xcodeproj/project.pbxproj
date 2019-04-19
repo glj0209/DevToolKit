@@ -17,6 +17,8 @@
 		ABD3A1FF6385020DA5D2BE0D563C508B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		E0C9F12022685975001468E0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9F11F22685973001468E0 /* ColorExtensions.swift */; };
 		E0C9F122226866A8001468E0 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9F121226866A8001468E0 /* ButtonExtensions.swift */; };
+		E0C9F12622687F89001468E0 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9F12522687F89001468E0 /* ViewExtensions.swift */; };
+		E0C9F12822688888001468E0 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9F12722688888001468E0 /* ImageExtensions.swift */; };
 		E25D4CEEDB8E6B3AA9BD166B8E6A2DF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		DF66F6D220EB5F01B6D4F7F0A84277C5 /* Pods-DevToolKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DevToolKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E0C9F11F22685973001468E0 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = DevToolKit/Classes/ColorExtensions.swift; sourceTree = "<group>"; };
 		E0C9F121226866A8001468E0 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonExtensions.swift; path = DevToolKit/Classes/ButtonExtensions.swift; sourceTree = "<group>"; };
+		E0C9F12522687F89001468E0 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = DevToolKit/Classes/ViewExtensions.swift; sourceTree = "<group>"; };
+		E0C9F12722688888001468E0 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageExtensions.swift; path = DevToolKit/Classes/ImageExtensions.swift; sourceTree = "<group>"; };
 		E18791C5BD31C4C35F70343D1731D724 /* Pods-DevToolKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DevToolKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E46562DEC5B09DA1F153040447F164BD /* DevToolKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DevToolKit-umbrella.h"; sourceTree = "<group>"; };
 		E6BBF6182E6445809F9E9B512D52D1F7 /* Pods_DevToolKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevToolKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,8 @@
 			children = (
 				E0C9F11F22685973001468E0 /* ColorExtensions.swift */,
 				E0C9F121226866A8001468E0 /* ButtonExtensions.swift */,
+				E0C9F12522687F89001468E0 /* ViewExtensions.swift */,
+				E0C9F12722688888001468E0 /* ImageExtensions.swift */,
 				1CB701A801FA62528821A8924395022C /* Pod */,
 				5F77CF34E9E8C2C665F6CA1114E66F47 /* Support Files */,
 			);
@@ -389,8 +395,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C9F12822688888001468E0 /* ImageExtensions.swift in Sources */,
 				2E10ED85C79D58D673BAFEBFCBC4FE14 /* DevToolKit-dummy.m in Sources */,
 				E0C9F122226866A8001468E0 /* ButtonExtensions.swift in Sources */,
+				E0C9F12622687F89001468E0 /* ViewExtensions.swift in Sources */,
 				E0C9F12022685975001468E0 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
