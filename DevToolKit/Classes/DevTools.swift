@@ -27,7 +27,7 @@ public class FileSize: NSObject {
     let gS:CGFloat = 1024 * 1024 * 1024
     let tS:CGFloat = 1024 * 1024 * 1024 * 1024
     
-    public func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
+    open func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
         
         let session = URLSession.shared
         let URL = NSURL.init(string: url)
@@ -116,21 +116,21 @@ public class FileSize: NSObject {
 
 
 //
-class StringTransfrom: NSObject {
-    static let sharedInstance = StringTransfrom()
+open class StringTransfrom: NSObject {
+    public static let sharedInstance = StringTransfrom()
     
     /** object 内容为空返回 "" */
-    func transformJSONStringByObject(object:Any) -> String? {
+    open func transformJSONStringByObject(object:Any) -> String? {
         return transformStringJSON(object: object)
     }
     
     /** object 内容为空返回 "null" */
-    func transformJSONStringByObjectWithNull(object:Any) -> String? {
+    open func transformJSONStringByObjectWithNull(object:Any) -> String? {
         return transformStringJSON(object: object)
     }
     
     /** 将object转化为JSON */
-    func transformStringJSON(object:Any) -> String? {
+    open func transformStringJSON(object:Any) -> String? {
         var data:NSData?
         do {
             data = try JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions(rawValue: String.Encoding.utf8.rawValue)) as NSData
@@ -142,7 +142,7 @@ class StringTransfrom: NSObject {
     }
     
     /** 解析本地json文件 */
-    func analysisBundleFileJSON(fileName:String,fileTyoe:String) -> Any? {
+    open func analysisBundleFileJSON(fileName:String,fileTyoe:String) -> Any? {
         let filePath = Bundle.main.path(forResource: fileName, ofType: fileTyoe)
         if filePath == nil {
             return nil
@@ -164,7 +164,7 @@ class StringTransfrom: NSObject {
         return json
     }
     
-    func regularString(str:String,pattern:String) -> Bool {
+    open func regularString(str:String,pattern:String) -> Bool {
         let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
         let isMatch = pred.evaluate(with: str)
         return isMatch
@@ -172,18 +172,18 @@ class StringTransfrom: NSObject {
 }
 
 
-class DeviceInfo: NSObject {
-    static let sharedInstance = DeviceInfo()
+public class DeviceInfo: NSObject {
+    public static let sharedInstance = DeviceInfo()
     
-    func getDeviceVersion() -> CGFloat {
+    open func getDeviceVersion() -> CGFloat {
         return CGFloat((UIDevice.current.systemVersion as NSString).floatValue)
     }
     
-    func getAppVersion() -> String {
+    open func getAppVersion() -> String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }
     
-    func getBuildAPPVersion() -> String {
+    open func getBuildAPPVersion() -> String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
 }
