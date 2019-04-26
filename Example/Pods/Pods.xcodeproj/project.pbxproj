@@ -15,6 +15,8 @@
 		8CC4DD73E626D8E34F2F071A2B10101E /* Pods-DevToolKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C27169767AC0CD782B866FC2068B36 /* Pods-DevToolKit_Example-dummy.m */; };
 		8CEB48288A14D829ABA20A426D2921F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		ABD3A1FF6385020DA5D2BE0D563C508B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		E089F5FC22718BC8002ECC76 /* AttritueTextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089F5FB22718BC8002ECC76 /* AttritueTextExtension.swift */; };
+		E089F5FE2271A67F002ECC76 /* TimeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089F5FD2271A67F002ECC76 /* TimeTools.swift */; };
 		E0C9F12022685975001468E0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9F11F22685973001468E0 /* ColorExtensions.swift */; };
 		E0C9F122226866A8001468E0 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9F121226866A8001468E0 /* ButtonExtensions.swift */; };
 		E0C9F12622687F89001468E0 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9F12522687F89001468E0 /* ViewExtensions.swift */; };
@@ -58,7 +60,7 @@
 		71F4A93CDF4DC41DC30E98A62478677C /* Pods-DevToolKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DevToolKit_Tests.modulemap"; sourceTree = "<group>"; };
 		76295D12E399E38B2F8B3AB8C33E1CA5 /* Pods-DevToolKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DevToolKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9BB65CD1364A0D57613C1039C4703E07 /* DevToolKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = DevToolKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9BB65CD1364A0D57613C1039C4703E07 /* DevToolKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = DevToolKit.podspec; sourceTree = "<group>"; };
 		9F30112A7771153CC4CB2B8E47B869F0 /* Pods-DevToolKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DevToolKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		A6CE71D65B45811385E16CEF9D766D38 /* Pods-DevToolKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DevToolKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C763384722A7DF00FDFE9C29BB3DD8C4 /* DevToolKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DevToolKit-dummy.m"; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		DB5EFD95C1645649C9D2A2F0CA9255EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEC3841309D98E0F7A380B7AF9E6A1C4 /* Pods_DevToolKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevToolKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF66F6D220EB5F01B6D4F7F0A84277C5 /* Pods-DevToolKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DevToolKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E089F5FB22718BC8002ECC76 /* AttritueTextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttritueTextExtension.swift; path = DevToolKit/Classes/AttritueTextExtension.swift; sourceTree = "<group>"; };
+		E089F5FD2271A67F002ECC76 /* TimeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTools.swift; sourceTree = "<group>"; };
 		E0C9F11F22685973001468E0 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = DevToolKit/Classes/ColorExtensions.swift; sourceTree = "<group>"; };
 		E0C9F121226866A8001468E0 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonExtensions.swift; path = DevToolKit/Classes/ButtonExtensions.swift; sourceTree = "<group>"; };
 		E0C9F12522687F89001468E0 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = DevToolKit/Classes/ViewExtensions.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				E0C9F12522687F89001468E0 /* ViewExtensions.swift */,
 				E0C9F12722688888001468E0 /* ImageExtensions.swift */,
 				E0C9F13E2269A229001468E0 /* DevTools.swift */,
+				E089F5FB22718BC8002ECC76 /* AttritueTextExtension.swift */,
+				E089F5FD2271A67F002ECC76 /* TimeTools.swift */,
 				1CB701A801FA62528821A8924395022C /* Pod */,
 				5F77CF34E9E8C2C665F6CA1114E66F47 /* Support Files */,
 			);
@@ -400,8 +406,10 @@
 			files = (
 				E0C9F12822688888001468E0 /* ImageExtensions.swift in Sources */,
 				2E10ED85C79D58D673BAFEBFCBC4FE14 /* DevToolKit-dummy.m in Sources */,
+				E089F5FE2271A67F002ECC76 /* TimeTools.swift in Sources */,
 				E0C9F122226866A8001468E0 /* ButtonExtensions.swift in Sources */,
 				E0C9F13F2269A229001468E0 /* DevTools.swift in Sources */,
+				E089F5FC22718BC8002ECC76 /* AttritueTextExtension.swift in Sources */,
 				E0C9F12622687F89001468E0 /* ViewExtensions.swift in Sources */,
 				E0C9F12022685975001468E0 /* ColorExtensions.swift in Sources */,
 			);

@@ -115,8 +115,76 @@ class FileSize: NSObject {
 }
 
 
+//
 class StringTransfrom: NSObject {
+    static let sharedInstance = StringTransfrom()
     
+    /** object 内容为空返回 "" */
+    func transformJSONStringByObject(object:Any) -> String? {
+        return transformStringJSON(object: object)
+    }
     
+    /** object 内容为空返回 "null" */
+    func transformJSONStringByObjectWithNull(object:Any) -> String? {
+        return transformStringJSON(object: object)
+    }
     
+    /** 将object转化为JSON */
+    func transformStringJSON(object:Any) -> String? {
+        var data:NSData?
+        do {
+            data = try JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions(rawValue: String.Encoding.utf8.rawValue)) as NSData
+        }catch {
+        
+        }
+        let jsonStr = NSString.init(data: data! as Data, encoding: String.Encoding.utf8.rawValue)
+        return jsonStr! as String
+    }
+    
+    /** 解析本地json文件 */
+    func analysisBundleFileJSON(fileName:String,fileTyoe:String) -> Any? {
+        let filePath = Bundle.main.path(forResource: fileName, ofType: fileTyoe)
+        if filePath == nil {
+            return nil
+        }
+        var jsonStr:NSString? = ""
+        do {
+            jsonStr = try NSString(contentsOfFile: filePath!, encoding: String.Encoding.utf8.rawValue)
+        } catch {
+            
+        }
+        
+        var json:Any? = nil
+        do {
+            json = try JSONSerialization.jsonObject(with: (jsonStr?.data(using: String.Encoding.utf8.rawValue))!, options: JSONSerialization.ReadingOptions.mutableContainers)
+        } catch {
+            
+        }
+        
+        return json
+    }
+    
+    func regularString(str:String,pattern:String) -> Bool {
+        let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
+        let isMatch = pred.evaluate(with: str)
+        return isMatch
+    }
 }
+
+
+class DeviceInfo: NSObject {
+    static let sharedInstance = DeviceInfo()
+    
+    func getDeviceVersion() -> CGFloat {
+        return CGFloat((UIDevice.current.systemVersion as NSString).floatValue)
+    }
+    
+    func getAppVersion() -> String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+    }
+    
+    func getBuildAPPVersion() -> String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+    }
+}
+
