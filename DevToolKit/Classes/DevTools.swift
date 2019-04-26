@@ -11,7 +11,7 @@ class DevTools: NSObject {
 
 }
 
-enum FileSizeType {
+public enum FileSizeType {
     case B
     case KB
     case M
@@ -19,15 +19,15 @@ enum FileSizeType {
     case T
 }
 
-class FileSize: NSObject {
-    static let sharedInstance = FileSize()
+public class FileSize: NSObject {
+    public static let sharedInstance = FileSize()
     
     let kS:CGFloat = 1024
     let mS:CGFloat = 1024 * 1024
     let gS:CGFloat = 1024 * 1024 * 1024
     let tS:CGFloat = 1024 * 1024 * 1024 * 1024
     
-    func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
+    public func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
         
         let session = URLSession.shared
         let URL = NSURL.init(string: url)
@@ -47,7 +47,7 @@ class FileSize: NSObject {
         task.resume()
     }
     
-    func fileSize(size:CGFloat, originType:FileSizeType) -> String {
+    public func calculateFileSize(size:CGFloat, originType:FileSizeType) -> String {
         
         let originSizeB = transformOriginSizeToB(size: size, originType: originType)
         
@@ -64,7 +64,7 @@ class FileSize: NSObject {
         }
     }
     
-    func tranformFileSize(size:CGFloat,originType:FileSizeType,type:FileSizeType) -> String {
+    public func tranformFileSize(size:CGFloat,originType:FileSizeType,type:FileSizeType) -> String {
         
         let originSize = transformOriginSizeToB(size: size, originType: originType)
         var sizeStr = "\(originSize)" + "B"
@@ -90,7 +90,7 @@ class FileSize: NSObject {
         return sizeStr
     }
     
-    func transformOriginSizeToB(size:CGFloat,originType:FileSizeType) -> CGFloat {
+    public func transformOriginSizeToB(size:CGFloat,originType:FileSizeType) -> CGFloat {
         var originSize = size
         switch originType {
         case .B:
