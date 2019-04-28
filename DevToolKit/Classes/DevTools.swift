@@ -27,7 +27,7 @@ public class FileSize: NSObject {
     let gS:CGFloat = 1024 * 1024 * 1024
     let tS:CGFloat = 1024 * 1024 * 1024 * 1024
     
-    open func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
+    @objc open func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
         
         let session = URLSession.shared
         let URL = NSURL.init(string: url)
