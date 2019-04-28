@@ -7,11 +7,7 @@
 
 import UIKit
 
-class DevTools: NSObject {
-
-}
-
-public enum FileSizeType {
+@objc public enum FileSizeType:Int {
     case B
     case KB
     case M
@@ -19,15 +15,15 @@ public enum FileSizeType {
     case T
 }
 
-public class FileSize: NSObject {
-    public static let sharedInstance = FileSize()
+@objc public class FileSize: NSObject {
+    @objc public static let sharedInstance = FileSize()
     
     let kS:CGFloat = 1024
     let mS:CGFloat = 1024 * 1024
     let gS:CGFloat = 1024 * 1024 * 1024
     let tS:CGFloat = 1024 * 1024 * 1024 * 1024
     
-    @objc open func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
+    @objc public func getUrlFileLength(url:String,completion:@escaping (_ length:CLongLong,_ error:NSError)->()) {
         
         let session = URLSession.shared
         let URL = NSURL.init(string: url)
@@ -47,7 +43,7 @@ public class FileSize: NSObject {
         task.resume()
     }
     
-    public func calculateFileSize(size:CGFloat, originType:FileSizeType) -> String {
+    @objc public func calculateFileSize(size:CGFloat, originType:FileSizeType) -> String {
         
         let originSizeB = transformOriginSizeToB(size: size, originType: originType)
         
@@ -64,7 +60,7 @@ public class FileSize: NSObject {
         }
     }
     
-    public func tranformFileSize(size:CGFloat,originType:FileSizeType,type:FileSizeType) -> String {
+    @objc public func tranformFileSize(size:CGFloat,originType:FileSizeType,type:FileSizeType) -> String {
         
         let originSize = transformOriginSizeToB(size: size, originType: originType)
         var sizeStr = "\(originSize)" + "B"
@@ -90,7 +86,7 @@ public class FileSize: NSObject {
         return sizeStr
     }
     
-    public func transformOriginSizeToB(size:CGFloat,originType:FileSizeType) -> CGFloat {
+    @objc public func transformOriginSizeToB(size:CGFloat,originType:FileSizeType) -> CGFloat {
         var originSize = size
         switch originType {
         case .B:
@@ -116,21 +112,21 @@ public class FileSize: NSObject {
 
 
 //
-open class StringTransfrom: NSObject {
-    public static let sharedInstance = StringTransfrom()
+@objc public class StringTransfrom: NSObject {
+    @objc public static let sharedInstance = StringTransfrom()
     
     /** object 内容为空返回 "" */
-    open func transformJSONStringByObject(object:Any) -> String? {
+    @objc public func transformJSONStringByObject(object:Any) -> String? {
         return transformStringJSON(object: object)
     }
     
     /** object 内容为空返回 "null" */
-    open func transformJSONStringByObjectWithNull(object:Any) -> String? {
+    @objc public func transformJSONStringByObjectWithNull(object:Any) -> String? {
         return transformStringJSON(object: object)
     }
     
     /** 将object转化为JSON */
-    open func transformStringJSON(object:Any) -> String? {
+    @objc public func transformStringJSON(object:Any) -> String? {
         var data:NSData?
         do {
             data = try JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions(rawValue: String.Encoding.utf8.rawValue)) as NSData
@@ -142,7 +138,7 @@ open class StringTransfrom: NSObject {
     }
     
     /** 解析本地json文件 */
-    open func analysisBundleFileJSON(fileName:String,fileTyoe:String) -> Any? {
+    @objc public func analysisBundleFileJSON(fileName:String,fileTyoe:String) -> Any? {
         let filePath = Bundle.main.path(forResource: fileName, ofType: fileTyoe)
         if filePath == nil {
             return nil
@@ -164,7 +160,7 @@ open class StringTransfrom: NSObject {
         return json
     }
     
-    open func regularString(str:String,pattern:String) -> Bool {
+    @objc public func regularString(str:String,pattern:String) -> Bool {
         let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
         let isMatch = pred.evaluate(with: str)
         return isMatch
@@ -172,18 +168,18 @@ open class StringTransfrom: NSObject {
 }
 
 
-public class DeviceInfo: NSObject {
-    public static let sharedInstance = DeviceInfo()
+@objc public class DeviceInfo: NSObject {
+    @objc public static let sharedInstance = DeviceInfo()
     
-    open func getDeviceVersion() -> CGFloat {
+    @objc public func getDeviceVersion() -> CGFloat {
         return CGFloat((UIDevice.current.systemVersion as NSString).floatValue)
     }
     
-    open func getAppVersion() -> String {
+    @objc public func getAppVersion() -> String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }
     
-    open func getBuildAPPVersion() -> String {
+    @objc public func getBuildAPPVersion() -> String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
 }
